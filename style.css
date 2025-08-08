@@ -1,39 +1,78 @@
+/* Estilo general */
 body {
-  background-color: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-h1 {
-  margin-top: 20px;
-}
-
-input {
-  padding: 10px;
+  background-color: #00ffff; /* Fondo cyan neón */
+  color: #000080;            /* Texto azul oscuro */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
   margin: 20px;
+}
+
+/* Títulos */
+h1 {
+  font-size: 28px;
+  text-align: center;
+  color: #000080;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #0000ff;
+  margin-bottom: 20px;
+}
+
+/* Enlaces estilo retro */
+a {
+  color: #ff0000;            /* Rojo brillante */
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+a:hover {
+  color: #ffff00;            /* Amarillo brillante al pasar el mouse */
+  background-color: #000080;
+  cursor: pointer;
+}
+
+/* Lista de videos (solo texto, sin imágenes) */
+.video-list {
+  margin: 0 auto;
   width: 300px;
+  border: 3px solid #000080;
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 5px 5px 0 #000080;
 }
 
-.catalogo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.item {
-  margin: 15px;
-  background: #222;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 200px;
-}
-
-.item img {
-  width: 100%;
+/* Cada enlace en bloque con espacio */
+.video-list a {
   display: block;
+  margin: 10px 0;
+  padding: 5px;
+  border: 1px solid #000080;
+  background-color: #e0ffff;
 }
 
-.item p {
-  padding: 10px;
+/* Hover en los bloques */
+.video-list a:hover {
+  background-color: #000080;
+  color: #ffff00;
+  border-color: #ffff00;
+}
+
+/* Video player centrar y margen */
+#player {
+  display: block;
+  margin: 30px auto;
+  max-width: 640px;
+  width: 100%;
+  border: 4px solid #000080;
+  box-shadow: 5px 5px 0 #0000ff;
+}
+
+/* Título del video */
+#titulo {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000080;
+  margin-top: 20px;
+  text-shadow: 1px 1px 0 #fff;
 }
