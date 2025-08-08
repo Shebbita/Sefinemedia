@@ -3,70 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <title>Reproductor</title>
-
-  <!-- CSS de Plyr.js -->
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-
-  <!-- Estilos personalizados -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Título dinámico del video -->
   <h1 id="titulo"></h1>
 
-  <!-- Contenedor del video y subtítulos -->
   <video id="player" controls crossorigin playsinline>
-    <!-- Las fuentes y subtítulos se insertan desde JavaScript -->
+    <!-- Se cargan fuente y subtítulos desde JS -->
   </video>
 
-  <!-- JS de Plyr.js -->
   <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-
   <script>
-    // ======= Obtener parámetros desde la URL =======
+    // Parámetros URL
     const urlParams = new URLSearchParams(window.location.search);
-    const videoID = urlParams.get('video');      // ID para buscar video en el diccionario
-    const titulo = urlParams.get('titulo');       // Título a mostrar
-
-    // Mostrar título en el <h1>
+    const videoID = urlParams.get('video');
+    const titulo = urlParams.get('titulo');
     document.getElementById('titulo').innerText = titulo;
 
-    // ======= Diccionario de videos y subtítulos =======
+    // Diccionario de videos
     const videos = {
       "streamtape1": {
         src: "https://streamtape.com/get_video?id=7bxAQd3jYxsRV0&expires=1754761860&ip=FRuODHxKExSXFxf&token=KU4ZPJZ3obBk&stream=1",
         subs: "subtitulos/es.vtt"
-      },
-      "streamtape2": {
-        src: "https://streamtape.com/get_video?id=YYYYYYYYYY",
-        subs: "subtitulos/es.vtt"
       }
+      // Puedes agregar más videos aquí...
     };
 
-    // ======= Insertar la fuente de video y pistas de subtítulos =======
     const videoElement = document.getElementById('player');
+
     if (videos[videoID]) {
-      // Crear y agregar la fuente de video
-      let source = document.createElement("source");
+      const source = document.createElement('source');
       source.src = videos[videoID].src;
-      source.type = "video/mp4";
+      source.type = 'video/mp4';
       videoElement.appendChild(source);
 
-      // Crear y agregar pista de subtítulos
-      let track = document.createElement("track");
+      const track = document.createElement('track');
       track.src = videos[videoID].subs;
-      track.kind = "subtitles";
-      track.srclang = "es";
-      track.label = "Español";
+      track.kind = 'subtitles';
+      track.srclang = 'es';
+      track.label = 'Español';
       track.default = true;
       videoElement.appendChild(track);
     } else {
-      // Mensaje si el videoID no existe en el diccionario
       videoElement.insertAdjacentHTML('afterend', '<p>Video no encontrado.</p>');
     }
 
-    // ======= Inicializar Plyr con subtítulos activados por defecto =======
     const player = new Plyr('#player', {
       captions: { active: true, language: 'es' }
     });
