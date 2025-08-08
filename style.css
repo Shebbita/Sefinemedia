@@ -1,11 +1,53 @@
+/* style.css */
+
+/* Estilo general simple */
+body {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 20px;
+}
+
+/* Título centrado */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Lista de videos sin contenedores */
+.video-list {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Enlaces simples */
+.video-list a {
+  display: block;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  color: blue;
+  text-decoration: underline;
+}
+
+/* Hover en enlaces */
+.video-list a:hover {
+  color: darkblue;
+  cursor: pointer;
+}
+
+/* Contenedor del video fijo 640x360 (16:9) */
 .video-wrapper {
   position: relative;
-  width: 640px;       /* ancho fijo estándar */
-  height: 360px;      /* altura fija acorde a 16:9 */
+  width: 640px;
+  height: 360px;
   margin: 30px auto;
   background: black;
 }
 
+/* Video llena el contenedor */
 .video-wrapper video {
   position: absolute;
   top: 0;
@@ -14,8 +56,19 @@
   height: 100%;
 }
 
-/* Fullscreen sigue igual */
+/* Fullscreen Plyr */
 .plyr--fullscreen video {
   width: 100% !important;
   height: 100% !important;
+}
+
+/* Título del video */
+#titulo {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: black;
 }
