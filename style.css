@@ -30,6 +30,8 @@ h1 {
   margin-bottom: 8px;
   color: blue;
   text-decoration: underline;
+  border: 2px solid #ccc;
+  border-radius: 2px;
 }
 
 /* Hover en enlaces */
