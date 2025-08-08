@@ -1,42 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi Sitio de Videos</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Catálogo Retro de Videos</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🎬 Catálogo de Videos</h1>
-  
-  <!-- Buscador -->
-  <input type="text" id="buscar" placeholder="Buscar..." onkeyup="filtrar()">
 
-  <!-- Catálogo -->
-  <div class="catalogo" id="catalogo">
-    <div class="item">
-      <a href="player.html?video=streamtape1&titulo=Película%201">
-        <img src="img/pelicula1.jpg" alt="Película 1">
-        <p>Película 1</p>
-      </a>
-    </div>
-    <div class="item">
-      <a href="player.html?video=streamtape2&titulo=Película%202">
-        <img src="img/pelicula2.jpg" alt="Película 2">
-        <p>Película 2</p>
-      </a>
-    </div>
-    <!-- Agrega más items aquí -->
+  <h1>Catálogo Retro de Videos</h1>
+
+  <div class="video-list">
+    <a href="player.html?video=streamtape1&titulo=Video+Retro+1">Video Retro 1</a>
+    <a href="player.html?video=streamtape2&titulo=Video+Retro+2">Video Retro 2</a>
+    <!-- Agrega más enlaces aquí -->
   </div>
 
-  <script>
-    function filtrar() {
-      let input = document.getElementById('buscar').value.toLowerCase();
-      let items = document.getElementsByClassName('item');
-      for (let i = 0; i < items.length; i++) {
-        let texto = items[i].innerText.toLowerCase();
-        items[i].style.display = texto.includes(input) ? '' : 'none';
-      }
-    }
-  </script>
 </body>
 </html>
