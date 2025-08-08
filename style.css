@@ -13,7 +13,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Lista de videos sin contenedores */
+/* Lista de videos */
 .video-list {
   max-width: 400px;
   margin: 0 auto;
@@ -21,31 +21,35 @@ h1 {
   list-style-type: none;
 }
 
-/* Enlaces simples */
+/* Enlaces de la lista */
 .video-list a {
   display: block;
-  padding: 8px 0;
+  padding: 10px;
   margin-bottom: 8px;
   color: blue;
-  text-decoration: underline;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 /* Hover en enlaces */
 .video-list a:hover {
-  color: darkblue;
-  cursor: pointer;
+  background-color: #f0f0f0;
+  border-color: #888;
 }
 
-/* Video player sin bordes ni contenedores */
+/* Video player */
 #player {
   display: block;
   margin: 30px auto;
   max-width: 100%;
   width: 100%;
   height: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-/* Ajuste fullscreen Plyr */
+/* Ajuste para fullscreen Plyr */
 .plyr--fullscreen video {
   width: 100% !important;
   height: 100% !important;
