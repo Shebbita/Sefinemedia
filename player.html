@@ -2,32 +2,40 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Reproductor</title>
+  <title>Reproductor Retro</title>
+
+  <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+  <!-- Tu CSS Retro -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <h1 id="titulo"></h1>
 
   <video id="player" controls crossorigin playsinline>
-    <!-- Se cargan fuente y subtítulos desde JS -->
+    <!-- Fuentes y subtítulos se agregan vía JS -->
   </video>
 
+  <!-- Plyr JS -->
   <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
   <script>
-    // Parámetros URL
     const urlParams = new URLSearchParams(window.location.search);
     const videoID = urlParams.get('video');
     const titulo = urlParams.get('titulo');
     document.getElementById('titulo').innerText = titulo;
 
-    // Diccionario de videos
     const videos = {
-      "streamtape1": {
+      "[SubsPlease] Takopii no Genzai - 01 (1080p) [2480DBD9]": {
         src: "https://streamtape.com/get_video?id=7bxAQd3jYxsRV0&expires=1754761860&ip=FRuODHxKExSXFxf&token=KU4ZPJZ3obBk&stream=1",
         subs: "subtitles/[Erai-raws] Takopii no Genzai - 01 [1080p CR WEBRip HEVC EAC3][MultiSub][30F3CB1D].spa.vtt"
+      },
+      "streamtape2": {
+        src: "https://streamtape.com/get_video?id=XXXXXX&expires=YYYYYY&ip=ZZZZZZ&token=AAAAAA&stream=1",
+        subs: "subtitulos/es.vtt"
       }
-      // Puedes agregar más videos aquí...
     };
 
     const videoElement = document.getElementById('player');
@@ -53,5 +61,6 @@
       captions: { active: true, language: 'es' }
     });
   </script>
+
 </body>
 </html>
