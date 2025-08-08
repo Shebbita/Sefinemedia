@@ -1,3 +1,5 @@
+/* style.css */
+
 /* Estilo general simple */
 body {
   background-color: white;
@@ -34,27 +36,4 @@ h1 {
 .video-list a:hover {
   color: darkblue;
   cursor: pointer;
-}
-
-/* Video player sin bordes ni contenedores */
-#player {
-  display: block;
-  margin: 30px auto;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-}
-
-/* Ajuste fullscreen Plyr */
-.plyr--fullscreen video {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* Título del video */
-#titulo {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
