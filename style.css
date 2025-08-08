@@ -1,7 +1,7 @@
-/* Estilo general */
+/* Fondo blanco y texto oscuro */
 body {
-  background-color: #00ffff; /* Fondo cyan neón */
-  color: #000080;            /* Texto azul oscuro */
+  background-color: #ffffff; /* fondo blanco */
+  color: #000080;            /* texto azul oscuro */
   font-family: "Courier New", Courier, monospace;
   font-size: 14px;
   margin: 20px;
@@ -30,14 +30,15 @@ a:hover {
   cursor: pointer;
 }
 
-/* Lista de videos (solo texto, sin imágenes) */
+/* Lista de videos: vertical, con espacio entre enlaces */
 .video-list {
   margin: 0 auto;
   width: 300px;
   border: 3px solid #000080;
-  background-color: #ffffff;
+  background-color: #e0ffff; /* ligero celeste para destacar */
   padding: 15px;
   box-shadow: 5px 5px 0 #000080;
+  display: block;            /* Asegura que sea bloque y vertical */
 }
 
 /* Cada enlace en bloque con espacio */
@@ -46,7 +47,7 @@ a:hover {
   margin: 10px 0;
   padding: 5px;
   border: 1px solid #000080;
-  background-color: #e0ffff;
+  background-color: #ffffff;
 }
 
 /* Hover en los bloques */
@@ -56,7 +57,7 @@ a:hover {
   border-color: #ffff00;
 }
 
-/* Video player centrar y margen */
+/* Video player centrado y margen */
 #player {
   display: block;
   margin: 30px auto;
