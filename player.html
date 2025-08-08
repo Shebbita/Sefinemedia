@@ -53,13 +53,13 @@
       track.label = 'Español';
       track.default = true;
       videoElement.appendChild(track);
+
+      const player = new Plyr('#player', {
+        captions: { active: true, language: 'es' }
+      });
     } else {
       videoElement.insertAdjacentHTML('afterend', '<p>Video no encontrado.</p>');
     }
-
-    const player = new Plyr('#player', {
-      captions: { active: true, language: 'es' }
-    });
   </script>
 
 </body>
