@@ -2,20 +2,67 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Reproductor Simple</title>
+  <title>Reproductor Simple 16:9</title>
 
   <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
   <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* Contenedor que mantiene 16:9 */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      padding-bottom: 56.25%; /* 16:9 */
+      margin: 30px auto;
+      background: black;
+    }
+
+    /* Video que ocupa todo el contenedor */
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Ajuste fullscreen Plyr */
+    .plyr--fullscreen video {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    /* Título simple */
+    #titulo {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: black;
+    }
+
+    body {
+      background: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+  </style>
 </head>
 <body>
 
   <h1 id="titulo"></h1>
 
-  <video id="player" controls crossorigin playsinline>
-    <!-- Fuentes y subtítulos se agregan vía JS -->
-  </video>
+  <div class="video-wrapper">
+    <video id="player" controls crossorigin playsinline>
+      <!-- Fuentes y subtítulos se agregan vía JS -->
+    </video>
+  </div>
 
   <!-- Plyr JS -->
   <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
