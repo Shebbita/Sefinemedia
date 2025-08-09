@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sefinemedia</title>
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
 
   <h1 style="text-align:center;">SEFINEMEDIA</h1>
 
   <ul class="video-list">
-    <li><a href="../player.html?video=streamtape7">Higurashi When They Cry 01</a></li>
-    <li><a href="../player.html?video=streamtape8">Higurashi When They Cry 02</a></li>
-    <li><a href="../player.html?video=streamtape9">Higurashi When They Cry 03</a></li>
-    <li><a href="../player.html?video=streamtape10">Higurashi When They Cry 04</a></li>
+    <li><a href="../../player.html?video=streamtape7">Higurashi When They Cry 01</a></li>
+    <li><a href="../../player.html?video=streamtape8">Higurashi When They Cry 02</a></li>
+    <li><a href="../../player.html?video=streamtape9">Higurashi When They Cry 03</a></li>
+    <li><a href="../../player.html?video=streamtape10">Higurashi When They Cry 04</a></li>
   </ul>
 
   <!-- Aquí se cargará el botón común -->
   <div id="nav-placeholder"></div>
 <script>
-  fetch('../nav.html')
+  fetch('../../nav.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('nav-placeholder').innerHTML = data;
