@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sefinemedia</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <h1 style="text-align:center;">SEFINEMEDIA</h1>
+
+  <ul class="video-list">
+    <li><a href="../player.html?video=streamtape33">Serial Experiments Lain 01</a></li>
+    <li><a href="../player.html?video=streamtape34">Serial Experiments Lain 02</a></li>
+    <li><a href="../player.html?video=streamtape35">Serial Experiments Lain 03</a></li>
+    <li><a href="../player.html?video=streamtape36">Serial Experiments Lain 04</a></li>
+  </ul>
+
+  <!-- Aquí se cargará el botón común -->
+  <div id="nav-placeholder"></div>
+<script>
+  fetch('../nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Error cargando nav:', err));
+</script>
+
+  
+</body>
+</html>
