@@ -49,13 +49,12 @@ h1 {
   background: black;
 }
 
-/* Video llena el contenedor */
-.video-wrapper video {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* iframe ocupa todo el contenedor */
+.video-wrapper iframe {
   width: 100%;
   height: 100%;
+  display: block;
+  border: none;
 }
 
 /* Título del video */
