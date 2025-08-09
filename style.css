@@ -58,12 +58,6 @@ h1 {
   height: 100%;
 }
 
-/* Fullscreen Plyr */
-.plyr--fullscreen video {
-  width: 100% !important;
-  height: 100% !important;
-}
-
 /* Título del video */
 #titulo {
   text-align: center;
