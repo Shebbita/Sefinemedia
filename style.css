@@ -26,7 +26,6 @@ h1 {
   padding: 8px;
   margin-bottom: 8px;
   color: blue;
-  text-decoration: underline;
   border: 2px solid #ccc;
   border-radius: 2px;
 }
@@ -35,6 +34,7 @@ h1 {
 .video-list a:hover {
   color: darkblue;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 /* Contenedor del video fijo 640x360 (16:9) */
