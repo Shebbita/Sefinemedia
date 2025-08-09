@@ -7,23 +7,41 @@
 </head>
 <body>
 
-  <h1 style="text-align:center;">SEFINEMEDIA</h1>
+  <h1 id="titulo" style="text-align:center;">SEFINEMEDIA</h1>
 
-  <div class="video-wrapper">
-    
-    <iframe
-      src="https://streamtape.com/e/7bxAQd3jYxsRV0"
-      allowfullscreen
-      frameborder="0"
-    ></iframe>
-
-    <iframe
-      src="https://streamtape.com/e/2KLAlbJL7OHZ4a2"
-      allowfullscreen
-      frameborder="0"
-    ></iframe>
-    
+  <div class="video-wrapper" id="video-wrapper">
+    <!-- Aquí se cargará el iframe dinámicamente -->
   </div>
+
+  <script>
+    // Obtener parámetros de URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoID = urlParams.get('video');
+    const titulo = urlParams.get('titulo') || "SEFINEMEDIA";
+    
+    // Mostrar el título
+    document.getElementById('titulo').innerText = titulo;
+
+    // Diccionario con IDs y URLs de videos en Streamtape
+    const videos = {
+      "streamtape1": "https://streamtape.com/e/7bxAQd3jYxsRV0",
+      "streamtape2": "https://streamtape.com/e/2KLAlbJL7OHZ4a2"
+    };
+
+    const videoWrapper = document.getElementById('video-wrapper');
+
+    if (videoID && videos[videoID]) {
+      videoWrapper.innerHTML = `
+        <iframe
+          src="${videos[videoID]}"
+          allowfullscreen
+          frameborder="0"
+        ></iframe>
+      `;
+    } else {
+      videoWrapper.innerHTML = '<p style="text-align:center; color:red;">Video no encontrado.</p>';
+    }
+  </script>
 
 </body>
 </html>
