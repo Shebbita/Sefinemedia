@@ -7,13 +7,24 @@
 </head>
 <body>
 
+  <!-- Aquí se cargará el botón común -->
+  <div id="nav-placeholder"></div>
+
   <h1 id="titulo" style="text-align:center;">SEFINEMEDIA</h1>
 
   <div class="video-wrapper" id="video-wrapper">
-    <!-- Aquí se cargará el iframe dinámicamente -->
+    <!-- Aquí se carga el iframe dinámicamente -->
   </div>
 
   <script>
+    // Cargar botón de navegación común
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+      })
+      .catch(err => console.error('Error cargando nav:', err));
+
     // Obtener parámetros de URL
     const urlParams = new URLSearchParams(window.location.search);
     const videoID = urlParams.get('video');
