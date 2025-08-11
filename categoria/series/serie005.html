@@ -18,7 +18,7 @@
     <!-- Aquí se cargará el botón común -->
   <div id="nav-placeholder"></div>
 <script>
-  fetch('../nav.html')
+  fetch('../../nav.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('nav-placeholder').innerHTML = data;
@@ -26,7 +26,7 @@
     .catch(err => console.error('Error cargando nav:', err));
 </script>
 
-<script src="../ordenar.js"></script>
+<script src="../../ordenar.js"></script>
   
 </body>
 </html>
