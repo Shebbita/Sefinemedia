@@ -10,13 +10,15 @@
     .mega-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center; /* Centra el contenido horizontalmente */
       background-color: #d9272e; /* Rojo Mega */
-      color: #fff;
+      color: #fff !important; /* Forzamos texto blanco */
       border-radius: 8px;
-      text-decoration: none;
+      text-decoration: none !important;
       font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra para resaltar */
       transition: all 0.2s ease;
+      width: 100%; /* Para que el texto realmente se vea centrado si el botón es ancho */
+      text-align: center; /* Centra el texto si hay varias líneas */
     }
     .mega-btn:hover {
       background-color: #b51f26; /* Rojo más oscuro */
