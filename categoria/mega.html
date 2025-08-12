@@ -170,5 +170,16 @@ esta información ❤︎
     <a href="https://www.ejemplo.com" target="_blank" rel="noopener noreferrer" class="external-button">Descargar PSIPHON3 + MEGADOWNLOADER</a>
 </footer>
 
+    <!-- Aquí se cargará el botón común -->
+    <div id="nav-placeholder"></div>
+<script>
+  fetch('../nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Error cargando nav:', err));
+</script>
+
 </body>
 </html>
