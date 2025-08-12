@@ -6,16 +6,20 @@
 <link rel="stylesheet" href="../style.css" />
 <style>
     .pastebin-box {
-        background-color: #f5f5f5; /* Fondo claro estilo Pastebin */
+        background-color: #f5f5f5;
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 10px;
         font-family: monospace;
         font-size: 14px;
-        white-space: pre-wrap; /* Mantener saltos y permitir ajuste */
-        word-wrap: break-word; /* Evitar desbordes */
-        max-height: 300px; /* Altura máxima con scroll */
-        overflow-y: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+
+        /* Ajustes para acotarlo */
+        width: 300px;       /* Ancho fijo */
+        height: 150px;      /* Alto fijo */
+        overflow-y: auto;   /* Scroll vertical */
+        overflow-x: auto;   /* Scroll horizontal si es necesario */
     }
 </style>
 </head>
