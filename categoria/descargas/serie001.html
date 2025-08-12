@@ -2,47 +2,44 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sefinemedia</title>
-  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../../style.css">
   <style>
-    /* Contenedor para centrar solo el botón */
-    .center-button {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px; /* separación del título */
-    }
-    /* Botón estilo MEGA */
+    /* Botón estilo Mega pero heredando tamaños de video-list */
     .mega-btn {
       display: inline-flex;
       align-items: center;
       background-color: #d9272e; /* Rojo Mega */
       color: #fff;
-      padding: 8px 16px;
       border-radius: 6px;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
       transition: background-color 0.2s ease;
     }
     .mega-btn:hover {
-      background-color: #b51f26; /* Rojo más oscuro al pasar el mouse */
+      background-color: #b51f26; /* Rojo más oscuro */
     }
     .mega-btn img.favicon {
       width: 16px;
       height: 16px;
       margin-right: 8px;
-      background-color: white; /* para que destaque sobre el rojo */
+      background-color: white;
       border-radius: 3px;
       padding: 2px;
     }
   </style>
 </head>
 <body>
-  <h1>SEFINEMEDIA</h1>
 
-  <!-- Botón centrado -->
-  <div class="center-button">
-    <a class="mega-btn external-link" href="https://mega.nz/folder/9fAiiBbK#FJ8zd8PLBk6iEpSPeamb5g">Mega Download</a>
-  </div>
+  <h1 style="text-align:center;">SEFINEMEDIA</h1>
+
+  <!-- Lista con el botón Mega heredando el estilo -->
+  <ul class="video-list">
+    <li>
+      <a class="mega-btn external-link" href="https://mega.nz/file/...">Mega Download</a>
+    </li>
+  </ul>
 
   <script>
     function faviconize(selector, fallback) {
@@ -60,5 +57,6 @@
     }
     faviconize('.external-link', '/fallback.png');
   </script>
+
 </body>
 </html>
