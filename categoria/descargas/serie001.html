@@ -5,22 +5,52 @@
   <title>Sefinemedia</title>
   <link rel="stylesheet" href="../../style.css" />
   <style>
-    .external-link {
+    /* Botón estilo MEGA */
+    .mega-btn {
       display: inline-flex;
       align-items: center;
+      background-color: #d9272e; /* Rojo Mega */
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
       text-decoration: none;
-      color: #007BFF;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
     }
-    .external-link img.favicon {
+    .mega-btn:hover {
+      background-color: #b51f26; /* Rojo más oscuro al pasar el mouse */
+    }
+    .mega-btn img.favicon {
       width: 16px;
       height: 16px;
-      margin-right: 4px;
+      margin-right: 8px;
+      background-color: white; /* para que destaque sobre el rojo */
+      border-radius: 3px;
+      padding: 2px;
     }
   </style>
 </head>
 <body>
-    <h1>SEFINEMEDIA</h1>
-  <a class="external-link" href="https://drive.google.com/..."></a>
-     <img class="favicon" src="https://mega.io/favicon.ico" alt=""> Mega
+  <h1>SEFINEMEDIA</h1>
+
+  <!-- Enlace sin favicon manual -->
+  <a class="mega-btn external-link" href="https://mega.nz/file/...">Mega Download</a>
+
+  <script>
+    function faviconize(selector, fallback) {
+      document.querySelectorAll(selector).forEach(link => {
+        if (!link.querySelector('.favicon')) { // Evita duplicados
+          const url = new URL(link.href);
+          const favicon = url.origin + '/favicon.ico';
+          const img = document.createElement('img');
+          img.src = favicon;
+          img.onerror = () => { img.src = fallback; };
+          img.className = 'favicon';
+          link.prepend(img);
+        }
+      });
+    }
+    faviconize('.external-link', '/fallback.png');
+  </script>
 </body>
 </html>
