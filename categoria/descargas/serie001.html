@@ -1,1 +1,44 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sefinemedia</title>
+  <!-- Favicon de pestaña -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    .external-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #007BFF;
+    }
+    .external-link img.favicon {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+    <h1>Descargas</h1>
+  <a class="external-link" href="https://drive.google.com/...">
+    <img class="favicon" src="https://drive.google.com/favicon.ico" alt=""> Google Drive
+  </a>
+  
+  <!-- Si prefieres automatizarlo -->
+  <script>
+    function faviconize(selector, fallback) {
+      document.querySelectorAll(selector).forEach(link => {
+        const url = new URL(link.href);
+        const favicon = url.origin + '/favicon.ico';
+        const img = document.createElement('img');
+        img.src = favicon;
+        img.onerror = () => { img.src = fallback; };
+        img.className = 'favicon';
+        link.prepend(img);
+      });
+    }
+    faviconize('.external-link', '/fallback.png');
+  </script>
+</body>
+</html>
