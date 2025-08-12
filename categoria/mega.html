@@ -5,13 +5,12 @@
 <title>Sefinepedia</title>
 <link rel="stylesheet" href="../style.css" />
 <style>
-    body {
-        margin: 0;
-        height: 100vh; /* Ocupa toda la pantalla */
+    .center-container {
         display: flex;
         justify-content: center; /* Centrado horizontal */
         align-items: center;     /* Centrado vertical */
-        background-color: #eaeaea; /* Color de fondo opcional */
+        min-height: 200px;       /* Altura mínima del bloque centrador */
+        border: 1px dashed #aaa; /* Solo para que veas el espacio que ocupa */
     }
 
     .pastebin-box {
@@ -24,8 +23,8 @@
         white-space: pre-wrap;
         word-wrap: break-word;
 
-        width: 90%;
-        height: 90%;
+        width: 300px;
+        height: 150px;
         overflow-y: auto;
         overflow-x: auto;
     }
