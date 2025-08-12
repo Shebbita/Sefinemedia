@@ -21,21 +21,6 @@
 <body>
     <h1>SEFINEMEDIA</h1>
   <a class="external-link" href="https://drive.google.com/..."></a>
-  
-  <!-- Si prefieres automatizarlo -->
-  <script>
-    function faviconize(selector, fallback) {
-      document.querySelectorAll(selector).forEach(link => {
-        const url = new URL(link.href);
-        const favicon = url.origin + '/favicon.ico';
-        const img = document.createElement('img');
-        img.src = favicon;
-        img.onerror = () => { img.src = fallback; };
-        img.className = 'favicon';
-        link.prepend(img);
-      });
-    }
-    faviconize('.external-link', '/fallback.png');
-  </script>
+     <img class="favicon" src="https://mega.io/favicon.ico" alt=""> Mega
 </body>
 </html>
