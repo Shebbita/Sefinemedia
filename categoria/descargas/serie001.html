@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sefinemedia</title>
-  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../style.css" />
   <style>
-    /* Mantiene tamaño heredado de video-list, pero cambia el aspecto visual */
+    /* Centrar el título */
+    h1 {
+      text-align: center;
+    }
+
+    /* Contenedor para centrar el botón */
+    .btn-container {
+      text-align: center; /* centra el botón horizontalmente */
+      margin-top: 20px;
+    }
+
+    /* Botón estilo Mega con contenido centrado verticalmente */
     .mega-btn {
-      display: inline-flex;            /* Permite alinear icono y texto en el centro */
-      align-items: center;             /* Centra verticalmente */
-      justify-content: center;         /* Centra horizontalmente */
-      background-color: #d9272e;       /* Rojo Mega */
-      color: #fff !important;          /* Texto blanco forzado */
+      display: inline-flex;
+      align-items: center;        /* centrado vertical */
+      justify-content: center;    /* centrado horizontal interno */
+      background-color: #d9272e;
+      color: #fff !important;
       border-radius: 8px;
-      text-decoration: none !important;
       font-weight: bold;
-      line-height: 1;                   /* importante para alinear texto verticalmente */
+      text-decoration: none !important;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      padding: 10px 20px;
+      font-size: 16px;
+      line-height: 1;             /* importante para alinear texto verticalmente */
+      cursor: pointer;
+      user-select: none;
       transition: all 0.2s ease;
-      padding: 10px 20px;               /* Espaciado interno */
-      width: 100%;                      /* Para que el texto realmente se vea centrado si el botón es ancho */
-      text-align: center;               /* Centra el texto si hay varias líneas */
     }
+
     .mega-btn:hover {
-      background-color: #b51f26;        /* Rojo más oscuro */
+      background-color: #b51f26;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.25);
     }
+
     .mega-btn img.favicon {
-      width: 16px;
-      height: 16px;
-      margin-right: 8px;
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
       background-color: white;
-      border-radius: 3px;
+      border-radius: 4px;
       padding: 2px;
+      flex-shrink: 0;             /* evita que la imagen se reduzca */
     }
   </style>
 </head>
 <body>
 
-  <h1 style="text-align:center;">SEFINEMEDIA</h1>
+  <h1>SEFINEMEDIA</h1>
 
-  <!-- Lista con el botón Mega heredando el estilo -->
-  <ul class="video-list">
-    <li>
-      <a class="mega-btn external-link" href="https://mega.nz/folder/9fAiiBbK#FJ8zd8PLBk6iEpSPeamb5g">Mega Download</a>
-    </li>
-  </ul>
+  <div class="btn-container">
+    <a class="mega-btn external-link" href="https://mega.nz/file/...">Mega Download</a>
+  </div>
 
   <script>
     function faviconize(selector, fallback) {
       document.querySelectorAll(selector).forEach(link => {
-        if (!link.querySelector('.favicon')) { // Evita duplicados
+        if (!link.querySelector('.favicon')) {
           const url = new URL(link.href);
           const favicon = url.origin + '/favicon.ico';
           const img = document.createElement('img');
@@ -73,7 +88,6 @@
     })
     .catch(err => console.error('Error cargando nav:', err));
 </script>
-
-
+  
 </body>
 </html>
