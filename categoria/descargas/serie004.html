@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sefinemedia</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    /* Centrar el título */
+    h1 {
+      text-align: center;
+    }
+
+    /* Contenedor para centrar el botón */
+    .btn-container {
+      text-align: center; /* centra el botón horizontalmente */
+      margin-top: 20px;
+    }
+
+    /* Botón estilo Mega con contenido centrado verticalmente */
+    .mega-btn {
+      display: inline-flex;
+      align-items: center;        /* centrado vertical */
+      justify-content: center;    /* centrado horizontal interno */
+      background-color: #d9272e;
+      color: #fff !important;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none !important;
+      padding: 10px 20px;
+      font-size: 16px;
+      line-height: 1;             /* importante para alinear texto verticalmente */
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+
+    .mega-btn:hover {
+      background-color: #b51f26;
+    }
+
+    .mega-btn img.favicon {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      background-color: white;
+      border-radius: 4px;
+      padding: 2px;
+      flex-shrink: 0;             /* evita que la imagen se reduzca */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SEFINEMEDIA</h1>
+
+  <div class="btn-container">
+    <a class="mega-btn external-link" href="https://mega.nz/folder/o4IHUSIB#sClkZ_CwiX6FhyIvWB_O6w" target="_blank">Mega Download</a>
+  </div>
+
+  <script>
+    function faviconize(selector, fallback) {
+      document.querySelectorAll(selector).forEach(link => {
+        if (!link.querySelector('.favicon')) {
+          const url = new URL(link.href);
+          const favicon = url.origin + '/favicon.ico';
+          const img = document.createElement('img');
+          img.src = favicon;
+          img.onerror = () => { img.src = fallback; };
+          img.className = 'favicon';
+          link.prepend(img);
+        }
+      });
+    }
+    faviconize('.external-link', '/fallback.png');
+  </script>
+
+    <!-- Aquí se cargará el botón común -->
+  <div id="nav-placeholder"></div>
+<script>
+  fetch('../../nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Error cargando nav:', err));
+</script>
+  
+</body>
+</html>
