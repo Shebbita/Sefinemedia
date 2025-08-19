@@ -11,6 +11,9 @@
   <h1 style="text-align:center;">SEFINEMEDIA</h1>
   <h4 style="text-align:center;">Recomiendo encarecidamente el uso del navegador Brave para evitar anuncios provenientes de Streamtape</h4>
 
+  <!-- Buscador -->
+  <input type="text" id="search-box" placeholder="Buscar en la lista...">
+
   <ul class="video-list">
     <li><a href="../player.html?video=streamtape46">Nekojiru-sou (2001) [1080p] [MP4] 📺</a></li>
     <li><a href="descargas/pelicula001.html">Nekojiru-sou (2001) [480p] [MKV] ⬇️</a></li>
@@ -38,6 +41,19 @@
 </script>
 
 <script src="../ordenar.js"></script>
+
+<!-- Script del buscador -->
+<script>
+  const searchBox = document.getElementById('search-box');
+  const listItems = document.querySelectorAll('.video-list li');
+   searchBox.addEventListener('keyup', function() {
+   const query = this.value.toLowerCase();
+    listItems.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(query) ? '' : 'none';
+    });
+  });
+</script>
   
 </body>
 </html>
