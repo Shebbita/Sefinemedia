@@ -75,7 +75,8 @@ h1 {
   background-color: #fff;
   border-radius: 8px;
   margin: 10px auto;   /* ← centra el buscador y los enlaces */
-  max-width: 800px;    /* ← define el ancho */
+  width: 60%;
+  max-width: 1000px;    /* ← define el ancho */
   text-align: center;  /* ← centra el texto dentro */
 }
 #search-box::placeholder {
