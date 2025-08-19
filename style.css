@@ -72,7 +72,7 @@ h1 {
   padding: 10px;
   color: #fff;
   text-decoration: none;
-  background-color: #222;
+  background-color: #fff;
   border-radius: 8px;
   margin: 10px auto;   /* ← centra el buscador y los enlaces */
   width: 60%;          /* ← define el ancho */
