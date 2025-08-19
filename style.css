@@ -67,9 +67,14 @@ h1 {
 }
 
 /* Buscador */
-.form-control {
-  width: 60%;
+#search-box {
+  display: block;
   padding: 10px;
-  border: 1px solid #ccc;
+  color: #fff;
+  text-decoration: none;
+  background-color: #222;
   border-radius: 8px;
+  margin: 10px auto;   /* ← centra el buscador y los enlaces */
+  width: 60%;          /* ← define el ancho */
+  text-align: center;  /* ← centra el texto dentro */
 }
