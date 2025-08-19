@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sefinemedia</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
 
+  <h1 style="text-align:center;">SEFINEMEDIA</h1>
+
+  <ul class="video-list">
+    <li><a href="descargas/libros001.html">Biblioteca 90 - Filósofos en 90 minutos ⬇️</a></li>
+  </ul>
+
+    <!-- Aquí se cargará el botón común -->
+  <div id="nav-placeholder"></div>
+<script>
+  fetch('../nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Error cargando nav:', err));
+</script>
+
+<script src="../ordenar.js"></script>
+  
+</body>
+</html>
