@@ -46,11 +46,11 @@
 <script>
   const searchBox = document.getElementById('search-box');
   const listItems = document.querySelectorAll('.video-list li');
-   searchBox.addEventListener('keyup', function() {
-   const query = this.value.toLowerCase();
-    listItems.forEach(item => {
-      const text = item.textContent.toLowerCase();
-      item.style.display = text.includes(query) ? '' : 'none';
+    searchBox.addEventListener('keyup', function() {
+    const query = this.value.toLowerCase();
+      listItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? '' : 'none';
     });
   });
 </script>
