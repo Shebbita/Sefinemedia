@@ -65,3 +65,11 @@ h1 {
   font-size: 20px;
   color: black;
 }
+
+/* Buscador */
+.form-control {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
