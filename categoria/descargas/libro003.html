@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sefinemedia</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    /* Centrar el título */
+    h1 {
+      text-align: center;
+    }
+
+    /* Contenedor para centrar el botón */
+    .btn-container {
+      text-align: center; 
+      margin-top: 20px;
+    }
+
+    /* Botón estilo Internet Archive */
+    .archive-btn {
+      display: inline-flex;
+      align-items: center;        
+      justify-content: center;    
+      background-color: #000000;   /* negro */
+      color: #ffffff !important;   /* blanco */
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none !important;
+      padding: 10px 20px;
+      font-size: 16px;
+      line-height: 1;             
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+
+    .archive-btn:hover {
+      background-color: #333333;  /* gris oscuro al pasar mouse */
+    }
+
+    .archive-btn img.favicon {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      background-color: white;   /* mantiene contraste */
+      border-radius: 4px;
+      padding: 2px;
+      flex-shrink: 0;             
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SEFINEMEDIA</h1>
+
+  <div class="btn-container">
+    <a class="archive-btn external-link" href="https://archive.org/details/el-libro-de" target="_blank">Internet Archive Download</a>
+  </div>
+
+  <script>
+    function faviconize(selector, fallback) {
+      document.querySelectorAll(selector).forEach(link => {
+        if (!link.querySelector('.favicon')) {
+          const url = new URL(link.href);
+          const favicon = url.origin + '/favicon.ico';
+          const img = document.createElement('img');
+          img.src = favicon;
+          img.onerror = () => { img.src = fallback; };
+          img.className = 'favicon';
+          link.prepend(img);
+        }
+      });
+    }
+    faviconize('.external-link', '/fallback.png');
+  </script>
+
+  <!-- Aquí se cargará el botón común -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch('../../nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+      })
+      .catch(err => console.error('Error cargando nav:', err));
+  </script>
+  
+</body>
+</html>
